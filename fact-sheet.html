@@ -1,0 +1,564 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Buster's TD ? Licensing Fact Sheet</title><meta name="description" content="Buster's TD game, Unreal source code and AI research licensing specifications."><style>body{margin:0;background:#f2f7ff;color:#13263e;font:17px/1.6 system-ui,sans-serif}main{max-width:1140px;margin:auto;padding:40px 28px 80px}nav{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:32px}a{color:#0868ce}h1{font-size:clamp(28px,4vw,44px);line-height:1.2;color:#103b78}h2{margin-top:44px;color:#103b78}table{border-collapse:collapse;width:100%;background:white;font-size:15px;margin:22px 0;display:block;overflow:auto;border:1px solid #cadcf0;border-radius:9px}th,td{padding:12px 16px;border-bottom:1px solid #dce7f4;text-align:left;vertical-align:top}th{background:#103b78;color:white}tr:nth-child(even){background:#edf5ff}code{overflow-wrap:anywhere}@media print{body{background:white}nav{display:none}main{padding:0}table{display:table;font-size:11px}h2{break-after:avoid}}</style></head><body><main><nav><a href="./">View pitch deck</a><a href="BUSTERS_TD_AI_RESEARCH_FACT_SHEET.md" download>Download Markdown fact sheet</a></nav><h1>Buster's TD — AI Research Licensing Fact Sheet</h1>
+<p><strong>Robot Future · November 12, 2026 · robotfuturellc@gmail.com</strong></p>
+<p>Buster's TD is a commercially released Unreal tower-defense game with physics-based combat, maze construction and a player-controlled combat drone. Available licensing material spans the original human-written UE4 Blueprint project, its AI-assisted UE5 C++ modernization, Git history, player feedback, product records and automated testing tools.</p>
+<h2>Game and release</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Developer and publisher</td>
+<td>Robot Future</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>Windows / Steam</td>
+</tr>
+<tr>
+<td>Steam app</td>
+<td><strong>1316530</strong></td>
+</tr>
+<tr>
+<td>Early Access release</td>
+<td><strong>February 7, 2021</strong></td>
+</tr>
+<tr>
+<td>Commercial release</td>
+<td><strong>January 23, 2024</strong></td>
+</tr>
+<tr>
+<td>Editions</td>
+<td>Original <strong>Unreal Engine 4.26</strong> and modernized <strong>Unreal Engine 5.8</strong></td>
+</tr>
+<tr>
+<td>Gameplay length</td>
+<td><strong>20 hours</strong>, including all endless levels</td>
+</tr>
+<tr>
+<td>Modes</td>
+<td>Campaign, challenge levels and Endless survival</td>
+</tr>
+<tr>
+<td>Full build map set</td>
+<td><strong>23 maps: 22 gameplay maps and 1 main menu</strong></td>
+</tr>
+<tr>
+<td>Objective</td>
+<td>Protect the gravity well while defeating enemy waves</td>
+</tr>
+<tr>
+<td>Gameplay loop</td>
+<td>Build walls and towers, send waves, pilot the drone, repair and upgrade defenses, and revise the layout</td>
+</tr>
+<tr>
+<td>Maze construction</td>
+<td>Player-built walls and towers shape enemy routes; blocked enemies can attack defensive structures</td>
+</tr>
+<tr>
+<td>Physics</td>
+<td>Knockdown, knockback, ragdolls, physical vehicles, projectiles, collision and drone movement</td>
+</tr>
+<tr>
+<td>Tower families</td>
+<td><strong>6:</strong> Pellet, Micro Laser, Magma, Rocket, Mortar and Slapper; wall construction complements the tower roster</td>
+</tr>
+<tr>
+<td>Drone weapons</td>
+<td><strong>4:</strong> Pulse, Rockets, Railgun and Arc</td>
+</tr>
+<tr>
+<td>Drone progression</td>
+<td>Mission-based weapon purchases; free switching between owned weapons</td>
+</tr>
+<tr>
+<td>Level progression</td>
+<td>Up to <strong>3 stars</strong> per finite win: clear, at least 60% base health and at least 90% base health; saved best results and Endless records</td>
+</tr>
+<tr>
+<td>Demo</td>
+<td>Tutorial, first mission and City Endless; Steam demo app <strong>1353580</strong></td>
+</tr>
+<tr>
+<td>External promotion</td>
+<td>Alienware Arena Steam-key giveaway for <strong>Tier 5</strong> members</td>
+</tr>
+<tr>
+<td>Gameplay trailer</td>
+<td>https://www.youtube.com/watch?v=Qi7vXZ7G5bg&amp;t=9s</td>
+</tr>
+<tr>
+<td>Steam page</td>
+<td>https://store.steampowered.com/app/1316530/Busters_TD/</td>
+</tr>
+</tbody>
+</table>
+<h2>Source code and Blueprint modernization</h2>
+<p>The UE4 edition contains the original human-written Blueprint gameplay. The UE5 edition combines retained Blueprints with native C++ systems for targeting, movement, drone combat, UI, collision, editor tooling and automated tests. Together, the editions provide a practical engine-migration and Blueprint-to-C++ development case study.</p>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Original UE4</th>
+<th>UE5 modernization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine version</td>
+<td><strong>4.26.2</strong>, CL 15973114</td>
+<td><strong>5.8.3</strong>, CL 58210709</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>Blueprint-first gameplay with minimal native boilerplate</td>
+<td>Blueprints integrated with native C++ gameplay, UI, tools and tests</td>
+</tr>
+<tr>
+<td>Project C/C++ source and header files</td>
+<td><strong>4</strong></td>
+<td><strong>181</strong></td>
+</tr>
+<tr>
+<td>Physical C/C++ lines</td>
+<td><strong>39</strong></td>
+<td><strong>30,794</strong></td>
+</tr>
+<tr>
+<td>C/C++ code lines</td>
+<td><strong>20</strong></td>
+<td><strong>28,296</strong></td>
+</tr>
+<tr>
+<td>Runtime code</td>
+<td><strong>20</strong> lines / <strong>4</strong> files</td>
+<td><strong>17,999</strong> lines / <strong>119</strong> files</td>
+</tr>
+<tr>
+<td>Editor code</td>
+<td><strong>0</strong></td>
+<td><strong>3,092</strong> lines / <strong>23</strong> files</td>
+</tr>
+<tr>
+<td>Native test code</td>
+<td><strong>0</strong></td>
+<td><strong>7,205</strong> lines / <strong>39</strong> files</td>
+</tr>
+<tr>
+<td>Build/target C# code</td>
+<td><strong>32</strong> lines / <strong>3</strong> files</td>
+<td><strong>74</strong> lines / <strong>5</strong> files</td>
+</tr>
+<tr>
+<td>Blueprint-family packages</td>
+<td><strong>296</strong></td>
+<td><strong>274</strong></td>
+</tr>
+<tr>
+<td>Blueprint packages</td>
+<td><strong>233</strong></td>
+<td><strong>233</strong></td>
+</tr>
+<tr>
+<td>Widget Blueprints</td>
+<td><strong>50</strong></td>
+<td><strong>28</strong></td>
+</tr>
+<tr>
+<td>Animation Blueprints</td>
+<td><strong>13</strong></td>
+<td><strong>13</strong></td>
+</tr>
+<tr>
+<td>Blueprint-family packages in <code>Content/TowerD</code></td>
+<td><strong>134</strong></td>
+<td><strong>134</strong></td>
+</tr>
+<tr>
+<td>Development approach</td>
+<td>Human-written gameplay code and Blueprints</td>
+<td>AI-assisted migration, native enhancements and authoring tools</td>
+</tr>
+<tr>
+<td>AI development conversations</td>
+<td>Original human development history</td>
+<td><strong>UE5 enhancement chats available on request</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Code-line totals cover project source and exclude blank lines, comment-only lines, engine code, plugin code and generated intermediate files. Blueprint totals cover the full project library, including asset-pack content.</p>
+<h2>Levels and environments</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full build map set</td>
+<td><strong>22 gameplay maps + 1 main menu</strong></td>
+</tr>
+<tr>
+<td>Named menu/progression entries</td>
+<td><strong>15</strong>, including Tutorial</td>
+</tr>
+<tr>
+<td>Additional gameplay maps</td>
+<td><strong>7</strong></td>
+</tr>
+<tr>
+<td>Full source-library map files</td>
+<td>UE4: <strong>63</strong> · UE5: <strong>62</strong></td>
+</tr>
+<tr>
+<td>Maps within <code>Content/TowerD</code></td>
+<td>UE4: <strong>32</strong> · UE5: <strong>31</strong></td>
+</tr>
+<tr>
+<td>Environment variety</td>
+<td>City streets, forest villages, snowy mountains, industrial platforms, space environments, tunnels, bridges and craters</td>
+</tr>
+<tr>
+<td>Replay systems</td>
+<td>Endless survival, alternate maze layouts, tower combinations, upgrades and drone loadouts</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Level / map</th>
+<th>Unreal map ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tutorial</td>
+<td><code>Tutorial</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fly Down</td>
+<td><code>Level1</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>The Asteroid</td>
+<td><code>FlatGrass</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>The Hangar</td>
+<td><code>TheHangar</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Snow Day</td>
+<td><code>TheFactory</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Space Dock</td>
+<td><code>Space_Level</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>The Fall</td>
+<td><code>TheFall</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>The Tunnel</td>
+<td><code>TheTunnel</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>The Cube</td>
+<td><code>TheCube</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>The Bridge</td>
+<td><code>TheBridge</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td>The Crater</td>
+<td><code>TheCrater</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td>The Circle</td>
+<td><code>TheCircle</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Big City</td>
+<td><code>City</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Little Town</td>
+<td><code>Town</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Village</td>
+<td><code>Village</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td>TheGrass</td>
+<td><code>TheGrass</code></td>
+</tr>
+<tr>
+<td>17</td>
+<td>TheMountain</td>
+<td><code>TheMountain</code></td>
+</tr>
+<tr>
+<td>18</td>
+<td>PogMap</td>
+<td><code>PogMap</code></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Endless</td>
+<td><code>Endless</code></td>
+</tr>
+<tr>
+<td>20</td>
+<td>MainMenPlayable</td>
+<td><code>MainMenPlayable</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Level3</td>
+<td><code>Level3</code></td>
+</tr>
+<tr>
+<td>22</td>
+<td>Space_Glow</td>
+<td><code>Space_Glow</code></td>
+</tr>
+</tbody>
+</table>
+<p>The main menu is <code>MainMenuLevel</code>. The full source libraries also contain sample showcases, menus, tests and unused map content.</p>
+<h2>Development history and ownership</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original development history begins</td>
+<td><strong>February 16, 2019</strong></td>
+</tr>
+<tr>
+<td>Latest preserved original commit</td>
+<td><strong>January 13, 2024</strong></td>
+</tr>
+<tr>
+<td>Original UE4 branch history</td>
+<td><strong>41 commits</strong></td>
+</tr>
+<tr>
+<td>Original UE4 commits across saved references</td>
+<td><strong>43 unique commits</strong></td>
+</tr>
+<tr>
+<td>UE5 branch history</td>
+<td><strong>21 commits</strong></td>
+</tr>
+<tr>
+<td>UE5 commits across branches, remotes and tags</td>
+<td><strong>28 unique commits</strong></td>
+</tr>
+<tr>
+<td>Source control</td>
+<td>Git, preserved UE4 archives, a UE5 modernization repository and development documentation</td>
+</tr>
+<tr>
+<td>Backups</td>
+<td>Project backups going back to <strong>2019</strong></td>
+</tr>
+<tr>
+<td>Earlier engine editions</td>
+<td>UE4.22, UE4.23 and UE4.26</td>
+</tr>
+<tr>
+<td>Original developer</td>
+<td><strong>One original developer</strong></td>
+</tr>
+<tr>
+<td>Source publication</td>
+<td><strong>The game source has never been public</strong></td>
+</tr>
+<tr>
+<td>Licensing contact</td>
+<td><strong>Robot Future — robotfuturellc@gmail.com</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>Project assets and packaged game</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Original UE4</th>
+<th>UE5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full Content library</td>
+<td><strong>27.474 GB</strong> / 27,474,119,951 bytes</td>
+<td><strong>27.257 GB</strong> / 27,257,355,330 bytes</td>
+</tr>
+<tr>
+<td>Unreal asset files</td>
+<td><strong>9,985 <code>.uasset</code></strong></td>
+<td><strong>10,095 <code>.uasset</code></strong></td>
+</tr>
+<tr>
+<td>Map files</td>
+<td><strong>63 <code>.umap</code></strong></td>
+<td><strong>62 <code>.umap</code></strong></td>
+</tr>
+<tr>
+<td>Total Unreal packages</td>
+<td><strong>10,048</strong></td>
+<td><strong>10,157</strong></td>
+</tr>
+<tr>
+<td>Packages in <code>Content/TowerD</code></td>
+<td><strong>753 assets + 32 maps</strong></td>
+<td><strong>886 assets + 31 maps</strong></td>
+</tr>
+<tr>
+<td>Windows distribution size</td>
+<td><strong>3.097 GB</strong> / 3,097,085,098 bytes</td>
+<td><strong>3.995 GB</strong> / 3,994,942,143 bytes</td>
+</tr>
+<tr>
+<td>Bundled Content reference</td>
+<td><strong>2.802 GB</strong> / 2,802,377,247 bytes</td>
+<td><strong>3.759 GB</strong> / 3,759,420,455 bytes</td>
+</tr>
+<tr>
+<td>Asset-pack directory packages</td>
+<td><strong>8,797</strong></td>
+<td><strong>8,797</strong></td>
+</tr>
+</tbody>
+</table>
+<p>GB is decimal. Full Content libraries include unused asset-pack content and support files. Windows distributions and bundled Content figures describe packaged builds. The libraries include Marketplace assets used in the game. Source libraries, packaged distributions and bundled Content are separate size categories.</p>
+<h2>AI testing and research tools</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI level tester</strong></td>
+<td><strong>Purpose-built AI gameplay tester for level verification</strong>, including defense planning, tower purchases, upgrades, drone flight and weapon control</td>
+</tr>
+<tr>
+<td>Gameplay verification</td>
+<td>Exercises waves, objectives, resource spending and player input paths; records game state, outcomes and screenshots</td>
+</tr>
+<tr>
+<td><strong>Unit and regression tests</strong></td>
+<td><strong>Full tower-defense and UE5 test suite</strong>, with <strong>117 passing native tests</strong></td>
+</tr>
+<tr>
+<td>Test implementation</td>
+<td><strong>7,205 lines</strong> across <strong>39 native test files</strong></td>
+</tr>
+<tr>
+<td>Test coverage areas</td>
+<td>Targeting, objective damage, collision, physical interactions, construction, upgrades, drone systems, UI and gameplay regressions</td>
+</tr>
+<tr>
+<td>Automated capture</td>
+<td>Native screenshots with game-state and action logs</td>
+</tr>
+<tr>
+<td>Development interface</td>
+<td>JSON control/state inspection and capture tooling</td>
+</tr>
+<tr>
+<td>Research integration</td>
+<td>Reset/step interfaces, observation/action schemas, rewards and trajectory exports are integration workstreams</td>
+</tr>
+<tr>
+<td>Research applications</td>
+<td>Blueprint-to-C++ conversion, engine migration, code repair, refactoring, gameplay agents and behavior evaluation</td>
+</tr>
+</tbody>
+</table>
+<h2>Player feedback and product-development material</h2>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Player feedback and reviews</td>
+<td>Available as training context showing how player observations fed back into development</td>
+</tr>
+<tr>
+<td>Development logs</td>
+<td>Engineering, build, gameplay and regression records</td>
+</tr>
+<tr>
+<td>Survey responses</td>
+<td><strong>46</strong>, collected April–May 2021</td>
+</tr>
+<tr>
+<td>Feature preferences</td>
+<td>Upgrades <strong>35</strong> · replayability <strong>26</strong> · level variety <strong>24</strong> · multiplayer <strong>22</strong> · customization <strong>20</strong> · story <strong>13</strong> · leaderboard <strong>8</strong></td>
+</tr>
+<tr>
+<td>Visual-tone preferences</td>
+<td><strong>32</strong> fun/comedic · <strong>14</strong> dark/serious</td>
+</tr>
+<tr>
+<td>Product planning</td>
+<td>Trello board with ideas, feedback, feature requests and versioned completion lists</td>
+</tr>
+<tr>
+<td>Engineering documents</td>
+<td>Migration, collision/navigation, upgrades, drone systems, UI, build and regression documentation</td>
+</tr>
+<tr>
+<td>Editable authoring material</td>
+<td>Tower/drone Blender sources and authoring/import scripts</td>
+</tr>
+<tr>
+<td><strong>UE5 AI development chats</strong></td>
+<td><strong>Available on request</strong>, covering AI-assisted enhancements to the game</td>
+</tr>
+<tr>
+<td>Licensing material</td>
+<td>Source code, Blueprints, development history, product records, reference builds and gameplay media</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Licensing enquiries: robotfuturellc@gmail.com</strong></p></main></body></html>
