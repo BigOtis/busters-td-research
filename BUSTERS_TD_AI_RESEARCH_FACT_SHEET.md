@@ -50,8 +50,6 @@ The UE4 edition contains the original human-written Blueprint gameplay. The UE5 
 | Widget Blueprints | **50** | **28** |
 | Animation Blueprints | **13** | **13** |
 | Blueprint-family packages in `Content/TowerD` | **134** | **134** |
-| Development approach | Human-written gameplay code and Blueprints | AI-assisted migration, native enhancements and authoring tools |
-| AI development conversations | Original human development history | **UE5 enhancement chats available on request** |
 
 Code-line totals cover project source and exclude blank lines, comment-only lines, engine code, plugin code and generated intermediate files. Blueprint totals cover the full project library, including asset-pack content.
 
@@ -59,7 +57,7 @@ Code-line totals cover project source and exclude blank lines, comment-only line
 
 | Specification | Details |
 |---|---|
-| Full build map set | **22 gameplay maps + 1 main menu** |
+| Full build map set | **22 gameplay maps** |
 | Named menu/progression entries | **15**, including Tutorial |
 | Additional gameplay maps | **7** |
 | Full source-library map files | UE4: **63** · UE5: **62** |
@@ -101,8 +99,8 @@ The main menu is `MainMenuLevel`. The full source libraries also contain sample 
 | Original development history begins | **February 16, 2019** |
 | Latest preserved original commit | **January 13, 2024** |
 | Original UE4 branch history | **41 commits** |
-| Original UE4 commits across saved references | **43 unique commits** |
-| UE5 branch history | **21 commits** |
+| Original UE4 commits across saved references | **43 unique large commits** |
+| UE5 branch history | **21 large commits** |
 | UE5 commits across branches, remotes and tags | **28 unique commits** |
 | Source control | Git, preserved UE4 archives, a UE5 modernization repository and development documentation |
 | Backups | Project backups going back to **2019** |
